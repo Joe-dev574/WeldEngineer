@@ -13,7 +13,7 @@ struct NewProjectView: View {
     @Environment(\.dismiss) var dismiss
     @State private var title = ""
     @State private var briefDescription = ""
-    @State private var label = ""
+    @State private var location = ""
     @State private var engineerAssigned = ""
     
     
@@ -24,12 +24,12 @@ struct NewProjectView: View {
                     .textFieldStyle(.roundedBorder)
                 TextField("Brief Description", text: $briefDescription)
                     .textFieldStyle(.roundedBorder)
-                TextField("Location", text: $label)
+                TextField("Location", text: $location)
                     .textFieldStyle(.roundedBorder)
                 TextField("Engineer Assigned", text: $engineerAssigned)
                     .textFieldStyle(.roundedBorder)
                 Button("Create") {
-                    let newProject = Project(title: title, briefDescription: briefDescription, label: label, engineerAssigned: engineerAssigned)
+                    let newProject = Project(title: title, briefDescription: briefDescription, location: location, engineerAssigned: engineerAssigned)
                     context.insert(newProject)
                     dismiss()
                 }

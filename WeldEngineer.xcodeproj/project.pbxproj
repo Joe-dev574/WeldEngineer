@@ -16,6 +16,11 @@
 		375F88AC2C5E9BB500E2089D /* WeldEngineerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88AB2C5E9BB500E2089D /* WeldEngineerUITestsLaunchTests.swift */; };
 		375F88BB2C5E9C7500E2089D /* Project .swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88BA2C5E9C7500E2089D /* Project .swift */; };
 		375F88BD2C5EA94D00E2089D /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88BC2C5EA94D00E2089D /* NewProjectView.swift */; };
+		375F88BF2C5FE05A00E2089D /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88BE2C5FE05A00E2089D /* EditProjectView.swift */; };
+		375F88C12C5FE48400E2089D /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C02C5FE48400E2089D /* PriorityView.swift */; };
+		375F88C32C5FFAC100E2089D /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C22C5FFAC100E2089D /* PreviewContainer.swift */; };
+		375F88C52C5FFB3E00E2089D /* WorkoutSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */; };
+		375F88C72C61B57A00E2089D /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C62C61B57A00E2089D /* ProjectList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		375F88AB2C5E9BB500E2089D /* WeldEngineerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeldEngineerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		375F88BA2C5E9C7500E2089D /* Project .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project .swift"; sourceTree = "<group>"; };
 		375F88BC2C5EA94D00E2089D /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
+		375F88BE2C5FE05A00E2089D /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		375F88C02C5FE48400E2089D /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
+		375F88C22C5FFAC100E2089D /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSamples.swift; sourceTree = "<group>"; };
+		375F88C62C61B57A00E2089D /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				375F88952C5E9BB500E2089D /* Preview Assets.xcassets */,
+				375F88C22C5FFAC100E2089D /* PreviewContainer.swift */,
+				375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -139,6 +151,9 @@
 			children = (
 				375F888F2C5E9BB400E2089D /* ProjectListView.swift */,
 				375F88BC2C5EA94D00E2089D /* NewProjectView.swift */,
+				375F88BE2C5FE05A00E2089D /* EditProjectView.swift */,
+				375F88C02C5FE48400E2089D /* PriorityView.swift */,
+				375F88C62C61B57A00E2089D /* ProjectList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,8 +298,13 @@
 			files = (
 				375F88BB2C5E9C7500E2089D /* Project .swift in Sources */,
 				375F88902C5E9BB400E2089D /* ProjectListView.swift in Sources */,
+				375F88C12C5FE48400E2089D /* PriorityView.swift in Sources */,
 				375F888E2C5E9BB400E2089D /* WeldEngineerApp.swift in Sources */,
+				375F88BF2C5FE05A00E2089D /* EditProjectView.swift in Sources */,
+				375F88C32C5FFAC100E2089D /* PreviewContainer.swift in Sources */,
 				375F88BD2C5EA94D00E2089D /* NewProjectView.swift in Sources */,
+				375F88C52C5FFB3E00E2089D /* WorkoutSamples.swift in Sources */,
+				375F88C72C61B57A00E2089D /* ProjectList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

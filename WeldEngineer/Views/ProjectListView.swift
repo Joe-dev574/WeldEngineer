@@ -8,63 +8,32 @@
 import SwiftUI
 import SwiftData
 
-
+enum SortOrder: String, Identifiable, CaseIterable {
+    case status, title, location, priority
+    
+    var id: Self {
+        self
+    }
+}
 struct  ProjectListView: View {
     //MARK: Properties
     @State private var createNewProject = false
-    @Query(sort: \Project.title) private var projects: [Project]
-    @Environment(\.modelContext) private var context
-    
-    
+    @State private var sortOrder = SortOrder.status
+    @State private var filter = ""
     
     var body: some View {
         NavigationStack{
-            Group {
-                if projects.isEmpty{
-                    ContentUnavailableView("No Available Projects", systemImage: "atom")
-                        .tint(.accentColor)
-                } else {
-                    List {
-                        ForEach(projects) { project in
-                            NavigationLink{
-                                Text(project.title)
-                            } label: {
-                                HStack(spacing: 10 ) {
-                                    project.icon
-                                    VStack(alignment: .leading){
-                                        Text(project.title).font(.title2)
-                                        Text(project.briefDescription).font(.callout)
-                                        HStack{
-                                            Text(project.label).font(.callout).foregroundStyle(.blue)
-                                            Text(project.engineerAssigned).font(.callout).foregroundStyle(.gray)
-                                        }
-                                        
-                                        if let priority = project.priority {
-                                            HStack {
-                                                ForEach(0..<priority, id: \.self) {
-                                                    _ in
-                                                    Image(systemName: "exclamationmark")
-                                                        .imageScale(.small)
-                                                        .foregroundStyle(.red)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-                        .onDelete { indexSet in
-                            indexSet.forEach { index in
-                                let project = projects[index]
-                                context.delete(project)
-                            }
-                        }
-                    }
-                    .listStyle(.plain)
-                    .padding()
+            Picker("", selection: $sortOrder) {
+                ForEach(SortOrder.allCases) {  sortOrder in
+                    Text("\(sortOrder.rawValue)").tag(sortOrder)
                 }
             }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+            
+            ProjectList(sortOrder: sortOrder, filterString: filter)
+                .searchable(text: $filter, prompt: Text("Filter on title or location"))
+
                     .navigationTitle("Project List")
                     .fontDesign(.serif)
                     .toolbar {
@@ -86,6 +55,8 @@ struct  ProjectListView: View {
     
 
 #Preview {
-    ProjectListView()
-        .modelContainer(for: Project.self, inMemory: true)
+    let preview = Preview(Project.self)
+    preview.addExamples(Project.sampleProjects)
+   return  ProjectListView()
+        .modelContainer(preview.container)
 }

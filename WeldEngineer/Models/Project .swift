@@ -13,19 +13,19 @@ import SwiftData
 class Project {
     var title: String
     var briefDescription: String
-    var label: String
+    var location: String
     var engineerAssigned: String
     var dateAdded: Date
     var dateStarted: Date
     var dateCompleted: Date
     var projectSummary: String
     var priority: Int?
-    var status: Status
+    var status: Status.RawValue
     
     init(
         title: String,
         briefDescription: String,
-        label: String,
+        location: String,
         engineerAssigned: String,
         dateAdded: Date = Date.now,
         dateStarted: Date = Date.distantPast,
@@ -36,17 +36,17 @@ class Project {
     ) {
         self.title = title
         self.briefDescription = briefDescription
-        self.label = label
+        self.location = location
         self.engineerAssigned = engineerAssigned
         self.dateAdded = dateAdded
         self.dateStarted = dateStarted
         self.dateCompleted = dateCompleted
         self.projectSummary = projectSummary
         self.priority = priority
-        self.status = status
+        self.status = status.rawValue
     }
     var icon: Image {
-        switch status {
+        switch Status(rawValue: status)! {
         case .queue:
             Image(systemName: "calendar")
         case .active:
