@@ -14,7 +14,7 @@ class Project {
     var title: String
     var briefDescription: String
     var location: String
-    var engineerAssigned: String
+    var engineer: String
     var dateAdded: Date
     var dateStarted: Date
     var dateCompleted: Date
@@ -26,7 +26,7 @@ class Project {
         title: String,
         briefDescription: String,
         location: String,
-        engineerAssigned: String,
+        engineer: String,
         dateAdded: Date = Date.now,
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantFuture,
@@ -37,7 +37,7 @@ class Project {
         self.title = title
         self.briefDescription = briefDescription
         self.location = location
-        self.engineerAssigned = engineerAssigned
+        self.engineer = engineer
         self.dateAdded = dateAdded
         self.dateStarted = dateStarted
         self.dateCompleted = dateCompleted

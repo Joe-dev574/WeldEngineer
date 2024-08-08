@@ -17,14 +17,13 @@ struct ProjectList: View {
             [SortDescriptor(\Project.status), SortDescriptor(\Project.title)]
         case .title:
             [SortDescriptor(\Project.title)]
-        case .priority:
-            [SortDescriptor(\Project.priority)]
         case .location:
             [SortDescriptor(\Project.location)]
         }
+        ///predicate for search filter string 
         let predicate = #Predicate<Project> { project in
             project.title.localizedStandardContains(filterString)
-            || project.location.localizedStandardContains(filterString)
+            || project.engineer.localizedStandardContains(filterString)
             || filterString.isEmpty
         }
         _projects = Query(filter: predicate, sort: sortDescriptors)
@@ -48,9 +47,9 @@ struct ProjectList: View {
                                     Text(project.location).foregroundStyle(.secondary)
                                     if let priority = project.priority {
                                         HStack {
-                                            ForEach(1..<priority, id: \.self) { _ in
-                                                Image(systemName: "star")
-                                                    .imageScale(.small)
+                                            ForEach(0..<priority, id: \.self) { _ in
+                                                Image(systemName: "star.square")
+                                                    .imageScale(.medium)
                                                     .foregroundStyle(.red)
                                             }
                                         }

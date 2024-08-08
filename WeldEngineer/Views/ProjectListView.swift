@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 enum SortOrder: String, Identifiable, CaseIterable {
-    case status, title, location, priority
+    case status, title, location
     
     var id: Self {
         self
@@ -32,9 +32,10 @@ struct  ProjectListView: View {
             .padding(.horizontal)
             
             ProjectList(sortOrder: sortOrder, filterString: filter)
-                .searchable(text: $filter, prompt: Text("Filter on title or location"))
+                .searchable(text: $filter, prompt: Text("Filter with Title or Assigned Engineer"))
 
                     .navigationTitle("Project List")
+                    .navigationBarTitleDisplayMode(.inline)
                     .fontDesign(.serif)
                     .toolbar {
                         Button(action: {

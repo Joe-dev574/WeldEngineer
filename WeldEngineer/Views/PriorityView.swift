@@ -36,7 +36,7 @@ public struct PriorityView: View {
     ///   - color: The color of the image ( (Default - systemYellow)
     ///   - sfSymbol: A String representing an SFImage that has a fill variabnt (Default -  "star")
     ///
-    public init(maxPriority: Int, currentPriority: Binding<Int?>, width: Int = 25, color: UIColor = .systemOrange, sfSymbol: String = "bell") {
+    public init(maxPriority: Int, currentPriority: Binding<Int?>, width: Int = 25, color: UIColor = .systemOrange, sfSymbol: String = "square") {
         self.maxPriority = maxPriority
         self._currentPriority = currentPriority
         self.width = width
@@ -57,7 +57,7 @@ public struct PriorityView: View {
                         }
                     }
                     .opacity(currentPriority == 0 ? 0 : 1)
-            ForEach(0...maxPriority, id: \.self) { priority in
+            ForEach(1...maxPriority, id: \.self) { priority in
                Image(systemName: sfSymbol)
                     .resizable()
                     .scaledToFit()
@@ -109,7 +109,7 @@ extension View {
                 currentPriority: $currentPriority,
                 width: 40,
                 color: .systemRed,
-                sfSymbol: "bell"
+                sfSymbol: "square"
             )
         }
     }

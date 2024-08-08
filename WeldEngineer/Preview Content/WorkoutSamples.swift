@@ -13,12 +13,12 @@ extension Project {
     static let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date.now)!
     static var sampleProjects:[Project] {
         [
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location:  "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location:  "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
-            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineerAssigned: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location:  "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location:  "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
+            Project(title: "6005A Aluminum Qualification", briefDescription: "Develop WPS", location: "White River Marine Group", engineer: "JDeWeese", dateAdded: Date.distantPast, projectSummary: "TBD"),
         ]
     }
 }
