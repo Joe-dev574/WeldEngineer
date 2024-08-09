@@ -21,7 +21,7 @@ struct EditProjectView: View {
     @State private var dateStarted = Date.distantPast
     @State private var dateCompleted = Date.distantPast
     @State private var firstView = true
-    
+    @State private var problemDefinition = ""
     var body: some View {
         List{
         HStack {
@@ -103,6 +103,10 @@ struct EditProjectView: View {
                 } label: {
                     Text("Engineer").foregroundStyle(.secondary)
                 }
+            Text("Define the Problem:").foregroundStyle(.primary)
+            TextEditor(text: $problemDefinition)
+                .padding(.horizontal)
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
                 Text(" Project Summary").foregroundStyle(.secondary)
                 TextEditor(text: $projectSummary)
                     .padding(.horizontal)
@@ -120,6 +124,7 @@ struct EditProjectView: View {
                         project.briefDescription = briefDescription
                         project.location = location
                         project.engineer = engineer
+                        project.problemDefinition = problemDefinition
                         project.projectSummary    = projectSummary
                         project.dateAdded = dateAdded
                         project.dateStarted = dateStarted
@@ -136,6 +141,7 @@ struct EditProjectView: View {
                 briefDescription = project.briefDescription
                 location = project.location
                 engineer = project.engineer
+                problemDefinition = problemDefinition
                 projectSummary = project.projectSummary
                 dateAdded = project.dateAdded
                 dateStarted = project.dateStarted
@@ -151,6 +157,7 @@ struct EditProjectView: View {
         || briefDescription != project.briefDescription
         || location != location
         || engineer != project.engineer
+        || problemDefinition != project.problemDefinition
         || projectSummary != project.projectSummary
         || dateAdded != project.dateAdded
         || dateStarted != project.dateStarted

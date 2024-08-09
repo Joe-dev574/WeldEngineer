@@ -21,6 +21,7 @@ class Project {
     var projectSummary: String
     var priority: Int?
     var status: Status.RawValue
+    var problemDefinition:  String
     
     init(
         title: String,
@@ -32,7 +33,8 @@ class Project {
         dateCompleted: Date = Date.distantFuture,
         projectSummary: String = "",
         priority: Int? = nil,
-        status: Status = .queue
+        status: Status = .queue,
+        problemDefinition: String = ""
     ) {
         self.title = title
         self.briefDescription = briefDescription
@@ -44,6 +46,7 @@ class Project {
         self.projectSummary = projectSummary
         self.priority = priority
         self.status = status.rawValue
+        self.problemDefinition = problemDefinition
     }
     var icon: Image {
         switch Status(rawValue: status)! {
