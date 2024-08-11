@@ -129,72 +129,71 @@ struct EditProjectView: View {
                 HStack {
                     Button("Labels", systemImage: "bookmark.fill") {
                         showGenres.toggle()
-                    }
-                    .sheet(isPresented: $showGenres) {
+                    }.buttonStyle(.bordered)
+                        .sheet(isPresented: $showGenres) {
                         GenreView(project: project)
                     }
+                    
+                    NavigationLink {
+                        InvestigationsListView(project: project)
+                    } label: {
+                        let count = project.investigations?.count ?? 0
+                        Label("^[\(count) Investigations](inflect: true)", systemImage: "quote.opening")
+                    }
                 }
-                NavigationLink {
-                    InvestigationsListView(project: project)
-                } label: {
-                    let count = project.investigations?.count ?? 0
-                    Label("^[\(count) Investigations](inflect: true)", systemImage: "quote.opening")
-                }
-                .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(.horizontal)
-                
-            }
-            .textFieldStyle(.roundedBorder)
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                if changed {
-                    Button("Update") {
-                        project.status = status.rawValue
-                        project.priority = priority
-                        project.title = title
-                        project.briefDescription = briefDescription
-                        project.location = location
-                        project.engineer = engineer
-                        project.problemDefinition = problemDefinition
-                        project.projectSummary    = projectSummary
-                        project.dateAdded = dateAdded
-                        project.dateStarted = dateStarted
-                        project.dateCompleted = dateCompleted
-                        dismiss()
+                .textFieldStyle(.roundedBorder)
+                .navigationTitle(title)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    if changed {
+                        Button("Update") {
+                            project.status = status.rawValue
+                            project.priority = priority
+                            project.title = title
+                            project.briefDescription = briefDescription
+                            project.location = location
+                            project.engineer = engineer
+                            project.problemDefinition = problemDefinition
+                            project.projectSummary    = projectSummary
+                            project.dateAdded = dateAdded
+                            project.dateStarted = dateStarted
+                            project.dateCompleted = dateCompleted
+                            dismiss()
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
-                    .buttonStyle(.borderedProminent)
+                }
+                .onAppear {
+                    status = Status(rawValue: project.status)!
+                    priority = project.priority
+                    title = project.title
+                    briefDescription = project.briefDescription
+                    location = project.location
+                    engineer = project.engineer
+                    problemDefinition = project.problemDefinition
+                    projectSummary = project.projectSummary
+                    dateAdded = project.dateAdded
+                    dateStarted = project.dateStarted
+                    dateCompleted = project.dateCompleted
                 }
             }
-            .onAppear {
-                status = Status(rawValue: project.status)!
-                priority = project.priority
-                title = project.title
-                briefDescription = project.briefDescription
-                location = project.location
-                engineer = project.engineer
-                problemDefinition = problemDefinition
-                projectSummary = project.projectSummary
-                dateAdded = project.dateAdded
-                dateStarted = project.dateStarted
-                dateCompleted = project.dateCompleted
+            
+            
+            var changed: Bool {
+                status != Status(rawValue: project.status)!
+                || priority != project.priority
+                || title != project.title
+                || briefDescription != project.briefDescription
+                || location != project.location
+                || engineer != project.engineer
+                || problemDefinition != project.problemDefinition
+                || projectSummary != project.projectSummary
+                || dateAdded != project.dateAdded
+                || dateStarted != project.dateStarted
+                || dateCompleted != project.dateCompleted
             }
-        }
-        
-        
-        var changed: Bool {
-            status != Status(rawValue: project.status)!
-            || priority != project.priority
-            || title != project.title
-            || briefDescription != project.briefDescription
-            || location != location
-            || engineer != project.engineer
-            || problemDefinition != project.problemDefinition
-            || projectSummary != project.projectSummary
-            || dateAdded != project.dateAdded
-            || dateStarted != project.dateStarted
-            || dateCompleted != project.dateCompleted
         }
     }
 }
