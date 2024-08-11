@@ -22,6 +22,10 @@ class Project {
     var priority: Int?
     var status: Status.RawValue
     var problemDefinition:  String
+    @Relationship(deleteRule: .cascade)
+    var investigations: [Investigation]?
+    @Relationship(inverse: \Genre.projects)
+    var genres: [Genre]?
     
     init(
         title: String,
@@ -51,11 +55,11 @@ class Project {
     var icon: Image {
         switch Status(rawValue: status)! {
         case .queue:
-            Image(systemName: "calendar")
+            Image(systemName: "questionmark.circle")
         case .active:
-            Image(systemName: "calendar.badge.clock")
+            Image(systemName: "a.circle")
         case .hold:
-            Image(systemName: "calendar.badge.exclamationmark")
+            Image(systemName: "exclamationmark.circle")
         case .complete:
             Image(systemName: "checkmark.rectangle.fill")
                

@@ -21,6 +21,15 @@
 		375F88C32C5FFAC100E2089D /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C22C5FFAC100E2089D /* PreviewContainer.swift */; };
 		375F88C52C5FFB3E00E2089D /* WorkoutSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */; };
 		375F88C72C61B57A00E2089D /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C62C61B57A00E2089D /* ProjectList.swift */; };
+		375F88C92C669D6F00E2089D /* Investigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88C82C669D6F00E2089D /* Investigation.swift */; };
+		375F88CB2C669FFD00E2089D /* InvestigationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88CA2C669FFD00E2089D /* InvestigationsListView.swift */; };
+		375F88CD2C684C5500E2089D /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88CC2C684C5500E2089D /* Genre.swift */; };
+		375F88D02C684CC100E2089D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88CF2C684CC100E2089D /* UIColor+Extension.swift */; };
+		375F88D22C684CF600E2089D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88D12C684CF600E2089D /* Color+Extension.swift */; };
+		375F88D52C684D4F00E2089D /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88D42C684D4F00E2089D /* GenreView.swift */; };
+		375F88D72C68507F00E2089D /* NewGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88D62C68507F00E2089D /* NewGenreView.swift */; };
+		375F88D92C68649800E2089D /* GenreStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88D82C68649800E2089D /* GenreStackView.swift */; };
+		375F88DB2C68662100E2089D /* GenreSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F88DA2C68662100E2089D /* GenreSamples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +68,15 @@
 		375F88C22C5FFAC100E2089D /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSamples.swift; sourceTree = "<group>"; };
 		375F88C62C61B57A00E2089D /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
+		375F88C82C669D6F00E2089D /* Investigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investigation.swift; sourceTree = "<group>"; };
+		375F88CA2C669FFD00E2089D /* InvestigationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationsListView.swift; sourceTree = "<group>"; };
+		375F88CC2C684C5500E2089D /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		375F88CF2C684CC100E2089D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		375F88D12C684CF600E2089D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		375F88D42C684D4F00E2089D /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
+		375F88D62C68507F00E2089D /* NewGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGenreView.swift; sourceTree = "<group>"; };
+		375F88D82C68649800E2089D /* GenreStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreStackView.swift; sourceTree = "<group>"; };
+		375F88DA2C68662100E2089D /* GenreSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSamples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +107,7 @@
 		375F88812C5E9BB400E2089D = {
 			isa = PBXGroup;
 			children = (
+				375F888D2C5E9BB400E2089D /* WeldEngineerApp.swift */,
 				375F888C2C5E9BB400E2089D /* WeldEngineer */,
 				375F889E2C5E9BB500E2089D /* WeldEngineerTests */,
 				375F88A82C5E9BB500E2089D /* WeldEngineerUITests */,
@@ -109,9 +128,10 @@
 		375F888C2C5E9BB400E2089D /* WeldEngineer */ = {
 			isa = PBXGroup;
 			children = (
-				375F888D2C5E9BB400E2089D /* WeldEngineerApp.swift */,
+				375F88CE2C684C9F00E2089D /* Extensions */,
 				375F88B92C5E9C2E00E2089D /* Models */,
 				375F88B82C5E9C0D00E2089D /* Views */,
+				375F88D32C684D2C00E2089D /* ProjectFocus */,
 				375F88912C5E9BB500E2089D /* Assets.xcassets */,
 				375F88932C5E9BB500E2089D /* WeldEngineer.entitlements */,
 				375F88942C5E9BB500E2089D /* Preview Content */,
@@ -125,6 +145,7 @@
 				375F88952C5E9BB500E2089D /* Preview Assets.xcassets */,
 				375F88C22C5FFAC100E2089D /* PreviewContainer.swift */,
 				375F88C42C5FFB3E00E2089D /* WorkoutSamples.swift */,
+				375F88DA2C68662100E2089D /* GenreSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -154,6 +175,7 @@
 				375F88BE2C5FE05A00E2089D /* EditProjectView.swift */,
 				375F88C02C5FE48400E2089D /* PriorityView.swift */,
 				375F88C62C61B57A00E2089D /* ProjectList.swift */,
+				375F88CA2C669FFD00E2089D /* InvestigationsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,8 +184,29 @@
 			isa = PBXGroup;
 			children = (
 				375F88BA2C5E9C7500E2089D /* Project .swift */,
+				375F88C82C669D6F00E2089D /* Investigation.swift */,
+				375F88CC2C684C5500E2089D /* Genre.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		375F88CE2C684C9F00E2089D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				375F88CF2C684CC100E2089D /* UIColor+Extension.swift */,
+				375F88D12C684CF600E2089D /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		375F88D32C684D2C00E2089D /* ProjectFocus */ = {
+			isa = PBXGroup;
+			children = (
+				375F88D82C68649800E2089D /* GenreStackView.swift */,
+				375F88D42C684D4F00E2089D /* GenreView.swift */,
+				375F88D62C68507F00E2089D /* NewGenreView.swift */,
+			);
+			path = ProjectFocus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,14 +340,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				375F88BB2C5E9C7500E2089D /* Project .swift in Sources */,
+				375F88D22C684CF600E2089D /* Color+Extension.swift in Sources */,
 				375F88902C5E9BB400E2089D /* ProjectListView.swift in Sources */,
+				375F88D72C68507F00E2089D /* NewGenreView.swift in Sources */,
 				375F88C12C5FE48400E2089D /* PriorityView.swift in Sources */,
 				375F888E2C5E9BB400E2089D /* WeldEngineerApp.swift in Sources */,
+				375F88CD2C684C5500E2089D /* Genre.swift in Sources */,
+				375F88CB2C669FFD00E2089D /* InvestigationsListView.swift in Sources */,
+				375F88C92C669D6F00E2089D /* Investigation.swift in Sources */,
 				375F88BF2C5FE05A00E2089D /* EditProjectView.swift in Sources */,
 				375F88C32C5FFAC100E2089D /* PreviewContainer.swift in Sources */,
 				375F88BD2C5EA94D00E2089D /* NewProjectView.swift in Sources */,
+				375F88D02C684CC100E2089D /* UIColor+Extension.swift in Sources */,
+				375F88DB2C68662100E2089D /* GenreSamples.swift in Sources */,
 				375F88C52C5FFB3E00E2089D /* WorkoutSamples.swift in Sources */,
+				375F88D92C68649800E2089D /* GenreStackView.swift in Sources */,
 				375F88C72C61B57A00E2089D /* ProjectList.swift in Sources */,
+				375F88D52C684D4F00E2089D /* GenreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

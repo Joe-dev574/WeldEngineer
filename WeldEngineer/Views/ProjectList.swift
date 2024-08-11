@@ -42,6 +42,7 @@ struct ProjectList: View {
                         } label: {
                             HStack(spacing: 10) {
                                 project.icon
+                                    
                                 VStack(alignment: .leading) {
                                     Text(project.title).font(.title2)
                                     Text(project.location).foregroundStyle(.secondary)
@@ -49,7 +50,7 @@ struct ProjectList: View {
                                         HStack {
                                             ForEach(0..<priority, id: \.self) { _ in
                                                 Image(systemName: "star.square")
-                                                    .imageScale(.medium)
+                                                    .imageScale(.large)
                                                     .foregroundStyle(.red)
                                             }
                                         }
